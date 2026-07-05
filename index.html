@@ -234,6 +234,20 @@
       text-decoration: none;
     }
 
+    @keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero .container {
+  animation: fadeUp 1.2s ease-out;
+}
     @media(max-width: 800px) {
       nav {
         position: static;
