@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DJing for Diabetes Foundation</title>
+  <link rel="icon" href="assets/logo/d4d-favicon-v1.png" />
 
   <style>
     :root {
@@ -24,80 +25,87 @@
       color: var(--white);
     }
 
-  nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  padding: 20px 8%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(7,17,31,.65);
-  backdrop-filter: blur(18px);
-  border-bottom: 1px solid rgba(255,255,255,.08);
-}
-
-    nav .logo {
-      font-weight: 800;
-      letter-spacing: 1px;
-      color: var(--cyan);
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(7,17,31,.72);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
     }
 
-    nav a {
+    .logo img {
+      height: 70px;
+      display: block;
+    }
+
+    .nav-links a {
       color: var(--white);
       text-decoration: none;
-      margin-left: 22px;
-      font-size: 0.95rem;
+      margin-left: 24px;
+      font-size: .95rem;
+      font-weight: 700;
     }
 
-    section {
-      padding: 90px 8%;
+    .nav-links a:hover { color: var(--gold); }
+
+    section { padding: 100px 8%; }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      text-align: left;
+      background:
+        linear-gradient(90deg, rgba(7,17,31,.95) 0%, rgba(7,17,31,.78) 42%, rgba(7,17,31,.35) 100%),
+        url("assets/hero/hero-home-v1.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding-top: 140px;
     }
-
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-
-  background:
-    linear-gradient(rgba(7,17,31,.65), rgba(7,17,31,.75)),
-    url("assets/hero/hero-home-v1.png");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
 
     .container {
-      max-width: 1100px;
+      max-width: 1200px;
       margin: auto;
+      width: 100%;
+    }
+
+    .hero-content {
+      max-width: 720px;
+      animation: fadeUp 1.2s ease-out;
     }
 
     .eyebrow {
       color: var(--gold);
-      font-weight: bold;
+      font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 2px;
       margin-bottom: 14px;
+      font-size: .9rem;
     }
 
     h1 {
-      font-size: clamp(3rem, 8vw, 6.5rem);
-      line-height: 0.95;
-      margin: 0 0 20px;
+      font-size: clamp(3.4rem, 8vw, 7rem);
+      line-height: .92;
+      margin: 0 0 22px;
+      letter-spacing: -3px;
     }
 
     h2 {
-      font-size: clamp(2rem, 5vw, 3.4rem);
-      margin-bottom: 20px;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin: 0 0 22px;
+      letter-spacing: -1.5px;
     }
 
     h3 {
       color: var(--cyan);
-      font-size: 1.4rem;
+      font-size: 1.35rem;
     }
 
     p {
@@ -107,25 +115,26 @@
     }
 
     .tagline {
-      font-size: clamp(1.4rem, 3vw, 2rem);
-      color: var(--cyan);
+      font-size: clamp(1.25rem, 2.4vw, 1.8rem);
+      color: var(--white);
       font-weight: 800;
+      max-width: 680px;
     }
 
-    .buttons {
-      margin-top: 32px;
-    }
+    .gold-text { color: var(--gold); }
+
+    .buttons { margin-top: 32px; }
 
     .button {
       display: inline-block;
-      margin: 10px;
+      margin: 10px 12px 10px 0;
       padding: 16px 30px;
       border-radius: 999px;
       text-decoration: none;
-      font-weight: 800;
-      background: var(--cyan);
+      font-weight: 900;
+      background: var(--gold);
       color: var(--midnight);
-      transition: 0.25s ease;
+      transition: .25s ease;
     }
 
     .button.secondary {
@@ -135,37 +144,35 @@
     }
 
     .button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(34,211,238,.3);
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 18px 40px rgba(251,191,36,.28);
     }
 
-    .alt {
-      background: var(--navy);
-    }
+    .alt { background: var(--navy); }
 
     .story {
       display: grid;
       grid-template-columns: 1.1fr .9fr;
-      gap: 40px;
+      gap: 45px;
       align-items: center;
     }
 
     .photo-card {
-      min-height: 360px;
+      min-height: 400px;
       border-radius: 28px;
       background:
-        linear-gradient(rgba(7,17,31,.15), rgba(7,17,31,.75)),
+        linear-gradient(rgba(7,17,31,.1), rgba(7,17,31,.8)),
         linear-gradient(135deg, #22d3ee, #fbbf24);
       display: flex;
       align-items: end;
-      padding: 30px;
+      padding: 32px;
       box-shadow: 0 25px 60px rgba(0,0,0,.35);
     }
 
     .photo-card p {
       color: white;
-      font-weight: 700;
-      font-size: 1.35rem;
+      font-weight: 900;
+      font-size: 1.45rem;
     }
 
     .cards {
@@ -178,9 +185,9 @@
     .card {
       background: rgba(255,255,255,.08);
       border: 1px solid rgba(255,255,255,.1);
-      padding: 32px;
+      padding: 34px;
       border-radius: 24px;
-      transition: 0.25s ease;
+      transition: .25s ease;
     }
 
     .card:hover {
@@ -189,7 +196,7 @@
     }
 
     .big-number {
-      font-size: clamp(4rem, 13vw, 9rem);
+      font-size: clamp(4.5rem, 13vw, 10rem);
       font-weight: 900;
       color: var(--gold);
       line-height: 1;
@@ -207,7 +214,7 @@
       padding: 22px;
       border-radius: 18px;
       background: rgba(255,255,255,.08);
-      font-weight: 800;
+      font-weight: 900;
     }
 
     .country.active {
@@ -224,10 +231,15 @@
     }
 
     footer {
-      padding: 45px 8%;
+      padding: 55px 8%;
       text-align: center;
       background: #030712;
       color: #aaa;
+    }
+
+    footer img {
+      height: 90px;
+      margin-bottom: 20px;
     }
 
     footer a {
@@ -236,37 +248,49 @@
     }
 
     @keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(35px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+      from { opacity: 0; transform: translateY(35px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-.hero .container {
-  animation: fadeUp 1.2s ease-out;
-}
-    @media(max-width: 800px) {
+    @media(max-width: 850px) {
       nav {
         position: static;
         flex-direction: column;
-        gap: 12px;
+        gap: 14px;
+        padding: 18px 5%;
       }
 
-      nav a {
-        margin: 0 8px;
+      .logo img { height: 60px; }
+
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
       }
 
-      .story {
-        grid-template-columns: 1fr;
+      .nav-links a {
+        margin-left: 0;
+        font-size: .9rem;
       }
 
-      section {
-        padding: 70px 6%;
+      .hero {
+        text-align: center;
+        padding-top: 80px;
+        background:
+          linear-gradient(rgba(7,17,31,.78), rgba(7,17,31,.82)),
+          url("assets/hero/hero-home-v1.png");
+        background-size: cover;
+        background-position: center;
       }
+
+      .hero-content { margin: auto; }
+
+      .story { grid-template-columns: 1fr; }
+
+      section { padding: 75px 6%; }
+
+      h1 { letter-spacing: -1.5px; }
     }
   </style>
 </head>
@@ -274,31 +298,32 @@
 <body>
 
   <nav>
-  <div class="logo">
-    <img src="assets/logo/d4d-logo-horizontal-v1.png" alt="DJing for Diabetes" height="70">
-  </div>
+    <div class="logo">
+      <img src="assets/logo/d4d-logo-horizontal-v1.png" alt="DJing for Diabetes">
+    </div>
 
-  <div class="nav-links">
-    <a href="#story">Story</a>
-    <a href="#joy">Programs</a>
-    <a href="#tour">Global Joy Tour</a>
-    <a href="#join">Join</a>
-  </div>
-</nav>
+    <div class="nav-links">
+      <a href="#story">Story</a>
+      <a href="#joy">Programs</a>
+      <a href="#tour">Global Joy Tour</a>
+      <a href="#join">Join</a>
+    </div>
+  </nav>
 
   <section class="hero">
     <div class="container">
-      <div class="eyebrow">A global movement powered by music and joy</div>
-     <h1>Joy Is Part of the Treatment.</h1>
+      <div class="hero-content">
+        <div class="eyebrow">A global movement powered by music and joy</div>
+        <h1>Joy Is Part of the Treatment.</h1>
+        <p class="tagline">
+          Celebrating children living with diabetes through music, joy, and community.
+        </p>
 
-<p class="tagline">
-Celebrating children living with diabetes through music, joy, and community.
-</p>
-
-<div class="buttons">
-    <a class="button" href="#join">Join the Movement</a>
-    <a class="button secondary" href="#story">Our Story</a>
-</div>
+        <div class="buttons">
+          <a class="button" href="#join">Join the Movement</a>
+          <a class="button secondary" href="#story">Our Story</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -306,15 +331,16 @@ Celebrating children living with diabetes through music, joy, and community.
     <div class="container story">
       <div>
         <div class="eyebrow">Why We Exist</div>
-        <h2>It started with one little boy.</h2>
+        <h2>Every movement begins with one story.</h2>
         <p>
-          When our son Myles was diagnosed with Type 1 diabetes, our family entered a new world of insulin, alarms, blood sugar checks, uncertainty, and courage.
+          When our son Myles was diagnosed with Type 1 diabetes, our family entered a world we never expected.
         </p>
         <p>
-          But we made a decision: diabetes would be part of his story, not the whole story.
+          We quickly learned that managing diabetes requires courage every single day. But we also discovered something equally important:
+          <strong class="gold-text">joy belongs in the treatment plan.</strong>
         </p>
         <p>
-          DJing for Diabetes was created to celebrate resilience, create unforgettable memories, and remind every child and family that joy belongs in the treatment plan.
+          DJing for Diabetes was born from one simple belief: every child deserves moments of celebration — not just on birthdays, but throughout their diabetes journey.
         </p>
       </div>
 
@@ -331,18 +357,18 @@ Celebrating children living with diabetes through music, joy, and community.
 
       <div class="cards">
         <div class="card">
-          <h3>🎧 Diaversary Celebrations</h3>
-          <p>Turning diagnosis anniversaries into joyful celebrations of strength, courage, and community.</p>
+          <h3>🎧 Celebrate</h3>
+          <p>We transform diagnosis anniversaries into joyful milestones of courage, strength, and community.</p>
         </div>
 
         <div class="card">
-          <h3>🎁 Diaversary Kits</h3>
-          <p>Helping families celebrate diabetes milestones with music-inspired tools, encouragement, and love.</p>
+          <h3>🎁 Encourage</h3>
+          <p>We create celebration kits that remind children and families they are seen, supported, and never alone.</p>
         </div>
 
         <div class="card">
-          <h3>🌍 Global Joy Tour</h3>
-          <p>Building international partnerships that bring hope, music, and celebration to families around the world.</p>
+          <h3>🌍 Connect</h3>
+          <p>We bring together families, DJs, healthcare professionals, sponsors, and communities around the world.</p>
         </div>
       </div>
     </div>
@@ -350,7 +376,7 @@ Celebrating children living with diabetes through music, joy, and community.
 
   <section id="myles">
     <div class="container">
-      <div class="eyebrow">Meet Myles</div>
+      <div class="eyebrow">Meet the Inspiration</div>
       <p class="quote">“Diabetes became part of our story — but it never became the whole story.”</p>
       <p>
         Myles’ journey inspired a foundation built on celebration, courage, and the belief that children living with diabetes deserve more than management — they deserve moments of joy.
@@ -361,9 +387,9 @@ Celebrating children living with diabetes through music, joy, and community.
   <section id="tour" class="alt">
     <div class="container">
       <div class="eyebrow">The Global Joy Tour</div>
-      <h2>One mission. Every continent.</h2>
+      <h2>One mission. Global impact.</h2>
       <p>
-        Our journey begins in Thailand, where we are building relationships with healthcare leaders, families, and organizations who believe joy belongs in diabetes care.
+        Beginning in Thailand in 2026, DJing for Diabetes is building relationships with healthcare leaders, families, and organizations who believe joy belongs in diabetes care.
       </p>
 
       <div class="tour-grid">
@@ -396,7 +422,7 @@ Celebrating children living with diabetes through music, joy, and community.
       <div class="cards">
         <div class="card">
           <h3>❤️ Families</h3>
-          <p>Celebrate your child’s diabetes journey with joy, music, and community.</p>
+          <p>Celebrate your child's diabetes journey with joy, music, and community.</p>
         </div>
 
         <div class="card">
@@ -405,8 +431,13 @@ Celebrating children living with diabetes through music, joy, and community.
         </div>
 
         <div class="card">
-          <h3>🤝 Partners</h3>
-          <p>Help us expand hope through sponsorship, healthcare partnerships, and global collaboration.</p>
+          <h3>🏥 Healthcare Partners</h3>
+          <p>Help us bring joy, celebration, and emotional support into diabetes care.</p>
+        </div>
+
+        <div class="card">
+          <h3>🤝 Sponsors</h3>
+          <p>Invest in a movement built on hope, celebration, and global community impact.</p>
         </div>
       </div>
 
@@ -417,7 +448,7 @@ Celebrating children living with diabetes through music, joy, and community.
   </section>
 
   <footer>
-    <strong>DJing for Diabetes Foundation</strong><br><br>
+    <img src="assets/logo/d4d-logo-primary-v1.png" alt="DJing for Diabetes Foundation"><br>
     Turning the Tables on Diabetes — One Beat at a Time.<br><br>
     <a href="mailto:djingfordiabetes@gmail.com">djingfordiabetes@gmail.com</a><br><br>
     © 2026 DJing for Diabetes Foundation
