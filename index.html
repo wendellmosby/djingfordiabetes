@@ -253,6 +253,51 @@
       max-width: 820px;
     }
 
+    .featured-dj {
+      display: grid;
+      grid-template-columns: minmax(260px, 360px) 1fr;
+      gap: 45px;
+      align-items: center;
+      margin-top: 42px;
+      padding: 34px;
+      border-radius: 28px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 24px 60px rgba(0,0,0,.28);
+    }
+
+    .video-frame {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 20px;
+      aspect-ratio: 9 / 16;
+      background: #030712;
+      box-shadow: 0 18px 45px rgba(0,0,0,.35);
+    }
+
+    .video-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .featured-label {
+      color: var(--gold);
+      font-size: .85rem;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .featured-dj h3 {
+      margin: 10px 0 14px;
+      color: var(--white);
+      font-size: clamp(1.8rem, 4vw, 3rem);
+    }
+
     .campaign-steps {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -452,6 +497,35 @@
         <p>
           Drop a Beat invites DJs, artists, and music lovers to use their creativity and platforms to celebrate children living with Type 1 diabetes. A short dedication, a favorite mix, or a joyful shout-out can remind a child and family that they are supported by a much larger community.
         </p>
+      </div>
+
+
+      <div class="featured-dj">
+        <div class="video-frame">
+          <iframe
+            src="https://www.youtube.com/embed/0_9MkH4DY0M"
+            title="Leon Rogers drops a beat for children living with Type 1 diabetes"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div>
+          <span class="featured-label">Featured DJ</span>
+          <h3>Leon Rogers Drops a Beat</h3>
+          <p>
+            Chicago DJ, comedian, and radio personality Leon Rogers lends his voice and energy to children living with Type 1 diabetes—showing how music and community can turn awareness into encouragement.
+          </p>
+          <p>
+            Watch his message, share it with your network, and challenge another DJ to drop a beat for the mission.
+          </p>
+          <div class="buttons">
+            <a class="button" href="https://youtube.com/shorts/0_9MkH4DY0M" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
+            <a class="button secondary" href="https://www.zeffy.com/en-US/donation-form/donate-to-change-lives-6464" target="_blank" rel="noopener noreferrer">Support D4D</a>
+          </div>
+        </div>
       </div>
 
       <div class="campaign-steps">
