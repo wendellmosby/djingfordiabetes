@@ -243,6 +243,58 @@
       font-weight: 900;
     }
 
+    .drop-a-beat {
+      background:
+        radial-gradient(circle at 85% 15%, rgba(34,211,238,.18), transparent 35%),
+        linear-gradient(135deg, #07111f 0%, #0d1b2f 100%);
+    }
+
+    .campaign-intro {
+      max-width: 820px;
+    }
+
+    .campaign-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 38px;
+    }
+
+    .campaign-step {
+      padding: 30px;
+      border-radius: 24px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+    }
+
+    .campaign-step .step-number {
+      display: block;
+      margin-bottom: 16px;
+      color: var(--gold);
+      font-size: 2.4rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .campaign-step h3 {
+      margin: 0 0 10px;
+      color: var(--white);
+    }
+
+    .campaign-actions {
+      margin-top: 36px;
+      padding: 30px;
+      border-left: 5px solid var(--cyan);
+      border-radius: 0 20px 20px 0;
+      background: rgba(34,211,238,.08);
+    }
+
+    .campaign-actions p {
+      margin-top: 0;
+      color: var(--white);
+      font-weight: 700;
+    }
+
     footer {
       padding: 55px 8%;
       text-align: center;
@@ -319,6 +371,7 @@
     <div class="nav-links">
       <a href="#story">Story</a>
       <a href="#joy">Programs</a>
+      <a href="#drop-a-beat">Drop a Beat</a>
       <a href="#tour">Global Joy Tour</a>
       <a href="#join">Join</a>
       <a class="donate-link" href="https://www.zeffy.com/en-US/donation-form/donate-to-change-lives-6464" target="_blank" rel="noopener noreferrer">Donate</a>
@@ -386,6 +439,45 @@
           <h3>🌍 Connect</h3>
           <p>We bring together families, DJs, healthcare professionals, sponsors, and communities around the world.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="drop-a-beat" class="drop-a-beat">
+    <div class="container">
+      <div class="campaign-intro">
+        <div class="eyebrow">Drop a Beat for Diabetes Awareness</div>
+        <h2>One beat can make a child feel seen.</h2>
+        <p>
+          Drop a Beat invites DJs, artists, and music lovers to use their creativity and platforms to celebrate children living with Type 1 diabetes. A short dedication, a favorite mix, or a joyful shout-out can remind a child and family that they are supported by a much larger community.
+        </p>
+      </div>
+
+      <div class="campaign-steps">
+        <div class="campaign-step">
+          <span class="step-number">01</span>
+          <h3>Record</h3>
+          <p>Create a short video dedicating a beat, mix, or message of encouragement to children living with Type 1 diabetes.</p>
+        </div>
+
+        <div class="campaign-step">
+          <span class="step-number">02</span>
+          <h3>Share</h3>
+          <p>Post your video on social media, tell people why the mission matters, and invite another DJ or supporter to join you.</p>
+        </div>
+
+        <div class="campaign-step">
+          <span class="step-number">03</span>
+          <h3>Tag D4D</h3>
+          <p>Send your video to DJing for Diabetes so we can amplify your message and celebrate the people using music for impact.</p>
+        </div>
+      </div>
+
+      <div class="campaign-actions">
+        <p>Are you a DJ ready to drop a beat—or a supporter who knows someone we should invite?</p>
+        <a class="button" href="mailto:djing4diabetes@gmail.com?subject=I%20Want%20to%20Drop%20a%20Beat&body=Hello%20DJing%20for%20Diabetes%2C%0A%0AI%27d%20like%20to%20participate%20in%20the%20Drop%20a%20Beat%20campaign.%0A%0AName%3A%0ASocial%20media%20or%20website%3A%0A">Join the Campaign</a>
+        <button class="button secondary" type="button" id="share-campaign">Share Drop a Beat</button>
       </div>
     </div>
   </section>
@@ -471,6 +563,36 @@
     <a href="mailto:djing4diabetes@gmail.com">djing4diabetes@gmail.com</a><br><br>
     © 2026 DJing for Diabetes Foundation
   </footer>
+
+  <script>
+    const shareButton = document.getElementById('share-campaign');
+
+    shareButton.addEventListener('click', async () => {
+      const shareData = {
+        title: 'Drop a Beat for Diabetes Awareness',
+        text: 'Join DJing for Diabetes and use music to celebrate children living with Type 1 diabetes.',
+        url: window.location.origin + window.location.pathname + '#drop-a-beat'
+      };
+
+      try {
+        if (navigator.share) {
+          await navigator.share(shareData);
+        } else {
+          await navigator.clipboard.writeText(shareData.url);
+          const originalText = shareButton.textContent;
+          shareButton.textContent = 'Campaign Link Copied!';
+          setTimeout(() => {
+            shareButton.textContent = originalText;
+          }, 2500);
+        }
+      } catch (error) {
+        if (error.name !== 'AbortError') {
+          window.location.href = 'mailto:?subject=' + encodeURIComponent(shareData.title) +
+            '&body=' + encodeURIComponent(shareData.text + '\n\n' + shareData.url);
+        }
+      }
+    });
+  </script>
 
 </body>
 </html>
